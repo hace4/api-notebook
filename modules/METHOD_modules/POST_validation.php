@@ -2,15 +2,16 @@
 
 namespace modules\METHOD_modules;
 
-class validation
+class POST_validation
 {
     private static $valid_params = [];
+    public static $message = [];
 
     private static function check_void_params($params)
     {
 
         if (array_key_exists('full_name', $params) && array_key_exists('phone_number', $params) && array_key_exists('EMAIL', $params)) {
-            self::$valid_params = $params;
+
             if (array_key_exists('organization', $params) && array_key_exists('date', $params) && array_key_exists('photo', $params)) {
                 'l';
             } else {
@@ -24,8 +25,10 @@ class validation
             if (!array_key_exists('photo', $params)) {
                 self::$valid_params +=  ['photo' => ''];
             }
+            self::$valid_params = $params;
+            self::$message = json_encode(['message' => 'Created ','status'=> 'ok']);
         } else {
-            echo  json_encode(['message' => 'not valid']);
+            http_response_code(403);
         }
     }
 

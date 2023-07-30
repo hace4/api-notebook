@@ -6,7 +6,5 @@ use modules\db\CRUD;
 require_once __DIR__ . "/vendor/autoload.php";
 //start db connection
 CRUD::start();
-//get info from all tabeles in db
-CRUD::get_all_data();
-//include rotes
+//include routes
 require_once __DIR__ . "/router/routes.php";

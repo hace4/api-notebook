@@ -1,5 +1,7 @@
 <?php
 
-use modules\db\CRUD;
+use modules\METHOD_modules\GET_definitions;
 
-echo CRUD::$notelist_json;
+echo GET_definitions::definitions();
+
+
