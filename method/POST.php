@@ -1,6 +1,14 @@
 <?php
 
 use modules\db\CRUD;
+use modules\METHOD_modules\validation;
 
 
-CRUD::add_data('dima', 'org', 79266861046, 'shmelkov03012006@gmail.com', '2023-01-03', 'app.photo');
+$params =  validation::validation($_GET) ;
+
+if ( !$params ){
+    
+}else{
+    CRUD::add_data($params['full_name'], $params['organization'], $params['phone_number'], $params['EMAIL'], $params['date'], $params["photo"]);
+}
+
