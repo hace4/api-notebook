@@ -4,10 +4,17 @@ use modules\db\CRUD;
 use modules\METHOD_modules\POST_validation;
 
 
-$params =  POST_validation::validation($_GET) ;
+POST_validation::validation($_POST) ;
 
-if ( $params ){   
-    CRUD::add_data($params['full_name'], $params['organization'], $params['phone_number'], $params['EMAIL'], $params['date'], $params["photo"]);
-    echo POST_validation::$message;
+
+
+
+if ( POST_validation::$status){   
+    CRUD::add_data($_POST['full_name'], $_POST['organization'], $_POST['phone_number'], $_POST['EMAIL'], $_POST['date'], $_POST["photo"]);
+    echo POST_validation::$message;;
     http_response_code(201);
+}else{
+    die(POST_validation::$message);
+    http_response_code(403);
+
 }
