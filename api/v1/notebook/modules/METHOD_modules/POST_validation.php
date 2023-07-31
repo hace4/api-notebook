@@ -26,7 +26,7 @@ class POST_validation
                 self::$valid_params +=  ['photo' => ''];
             }
             self::$valid_params = $params;
-            self::$message = json_encode(['message' => 'Created ','status'=> 'ok']);
+            self::$message = json_encode(['message' => 'Created ', 'status' => 'ok']);
         } else {
             http_response_code(403);
         }

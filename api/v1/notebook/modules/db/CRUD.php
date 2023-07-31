@@ -36,6 +36,11 @@ class CRUD extends connect
         $notes = mysqli_query(self::$db, "SELECT * FROM `note` WHERE `id` = $id");
         self::unpack_note($notes);
     }
+    public static function delete_data($id)
+    {
+        $delete = mysqli_query(self::$db, "DELETE FROM note WHERE `note`.`id` = $id");
+        echo $delete;
+    }
     public static function add_data($full_name, $organization, $phone_number, $EMAIL, $date, $photo){
     /**
      *@hace4

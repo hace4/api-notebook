@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'modules\\METHOD_modules\\GET_definitions' => $baseDir . '/modules/METHOD_modules/GET_definitions.php',
+    'modules\\METHOD_modules\\POST_validation' => $baseDir . '/modules/METHOD_modules/POST_validation.php',
     'modules\\db\\CRUD' => $baseDir . '/modules/db/CRUD.php',
     'modules\\db\\connect' => $baseDir . '/modules/db/connect.php',
 );

@@ -22,6 +22,8 @@ class ComposerStaticInitee9f8f8757e574df783780b7dda652e2
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'modules\\METHOD_modules\\GET_definitions' => __DIR__ . '/../..' . '/modules/METHOD_modules/GET_definitions.php',
+        'modules\\METHOD_modules\\POST_validation' => __DIR__ . '/../..' . '/modules/METHOD_modules/POST_validation.php',
         'modules\\db\\CRUD' => __DIR__ . '/../..' . '/modules/db/CRUD.php',
         'modules\\db\\connect' => __DIR__ . '/../..' . '/modules/db/connect.php',
     );
