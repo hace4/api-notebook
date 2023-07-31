@@ -35,13 +35,13 @@ class POST_validation
         }
     }
 
-    public static function validation($params)
+    public static function validation()
     {
         /**~
          *@hace4
          *method validation field
          *@array $params 
          */
-        self::check_void_params($params);
+        self::check_void_params($_POST);
     }
 }

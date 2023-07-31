@@ -4,7 +4,7 @@ use modules\db\CRUD;
 use modules\METHOD_modules\POST_validation;
 
 
-POST_validation::validation($_POST) ;
+POST_validation::validation() ;
 
 
 
@@ -14,7 +14,7 @@ if ( POST_validation::$status){
     echo POST_validation::$message;;
     http_response_code(201);
 }else{
-    die(POST_validation::$message);
     http_response_code(403);
+    die(POST_validation::$message);
 
 }
