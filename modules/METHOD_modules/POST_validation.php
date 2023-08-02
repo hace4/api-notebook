@@ -2,11 +2,15 @@
 
 namespace modules\METHOD_modules;
 
-class POST_validation
+use modules\METHOD_modules\method;
+
+class POST_validation extends method
 {
-    public static $message = [];
-    public static $status = true;
-    private static function check_void_params($params)
+    /**
+    *@param array $params  POST params 
+    *@param json $message  server answer 
+    */
+    private static function check_void_params($params) 
     {
 
         if (array_key_exists('full_name', $params) && array_key_exists('phone_number', $params) && array_key_exists('EMAIL', $params)) {
@@ -27,21 +31,15 @@ class POST_validation
             
             $_POST[] = $params;
 
-            self::$message = json_encode(['message' => 'Created ', 'status' => 'ok']);
+            self::$message = json_encode(['message' => 'Created ', 'status' => True]);
 
         } else {
-            self::$status = false;
-            self::$message = json_encode(['message' => 'not valid request ', 'status' => '403']);
+            self::$message = json_encode(['message' => 'not valid request ', 'status' => false]);
         }
     }
 
     public static function validation()
     {
-        /**~
-         *@hace4
-         *method validation field
-         *@array $params 
-         */
         self::check_void_params($_POST);
     }
 }

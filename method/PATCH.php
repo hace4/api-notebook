@@ -1,13 +1,11 @@
 <?php
+use modules\METHOD_modules\PATCH_method;
 
-use modules\METHOD_modules\DELETE_modules;
+PATCH_method::update();
 
-$params = explode('/', $_GET['q']);
+echo PATCH_method::$message;
 
-DELETE_modules::check($params[0]);
-
-
-switch (json_decode(DELETE_modules::$message, true)['status']) {
+switch (json_decode(PATCH_method::$message, true)['status']) {
     case 'not found':
         http_response_code(404);
         break;

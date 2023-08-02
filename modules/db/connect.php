@@ -4,9 +4,10 @@ namespace modules\db;
 
 class connect
 {
+    public static $result;
     protected static $db;
 
-    protected static function db()
+    public static function start()
     {
         $config = require_once "config/db.php";
 

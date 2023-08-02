@@ -2,20 +2,23 @@
 
 namespace modules\METHOD_modules;
 
-use modules\db\CRUD;
+use modules\METHOD_modules\GET_unpack_note;
+use modules\db\read;
 
-class GET_definitions
+class GET_definitions extends GET_unpack_note
 {
-    public static function definitions()
+
+    /**function for definitions show all notes or one*/
+    public static function definitions()  
     {
-        /**function for definitions show all notes or one*/
         if (!empty($_GET['q'])) {
             $params = explode('/', $_GET['q']);
-            echo CRUD::get_id_data($params[0]);
+            read::get_id_data($params[0]);
         } else {
-            CRUD::get_all_data();
+            read::get_all_data();
         }
+        self::unpack_note(read::$result);
 
-        return CRUD::$notelist_json;
+        echo self::$notelist_json;
     }
 }

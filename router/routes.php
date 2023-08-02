@@ -6,6 +6,7 @@ use modules\Router;
 Router::page('POST', "POST");
 Router::page('GET', "GET");
 Router::page('DELETE', "DELETE");
+Router::page('PATCH', "PATCH");
 
 
 
