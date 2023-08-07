@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-// use modules CRUD[Creat, Read, Update, Delete]
+// use modules which start db connection
 
 use modules\db\connect;
 
